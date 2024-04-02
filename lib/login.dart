@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'signup.dart'; // Import the signup.dart file
 
 void main() {
   runApp(const MyApp());
@@ -148,7 +149,11 @@ class LoginPage extends StatelessWidget {
                   // Don't have an account text
                   GestureDetector(
                     onTap: () {
-                      // Add navigation to sign up page
+                      // Navigate to sign up page
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SignUpPage()),
+                      );
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
