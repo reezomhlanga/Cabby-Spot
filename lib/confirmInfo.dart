@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'login.dart';
+import 'faceScan.dart';
 
-class CardPage extends StatelessWidget {
-  const CardPage({Key? key}) : super(key: key);
+class ConfirmInfo extends StatelessWidget {
+  const ConfirmInfo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,52 +41,50 @@ class CardPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    'Card Collection',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                  ),
-                  Image.asset(
-                    'assets/card2.png',
-                    width: 500, // Adjust the width as needed
-                    height: 500, // Adjust the height as needed
-                  ),
-                  Text.rich(
-                    TextSpan(
-                      text: 'Note:',
-                      style: TextStyle(
-                        color: Colors.red, // Set the text color to red
-                        fontSize: 18,
-                      ),
-                      children: <InlineSpan>[
-                        TextSpan(
-                          text:
-                              ' You can collect your card at your nearest \nstores - PNP, CHECKERS OR COMPU TICKET.',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 18,
-                          ),
-                        ),
-                      ],
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  SizedBox(height: 50),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 200),
+                  Center(
                     child: Text(
-                      'What you need to know',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      'Please Confirm Your Details',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  SizedBox(height: 60),
+                  Text(
+                    'Personal Information:',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   SizedBox(height: 20),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 150),
-                    child: Text(
-                      'Bring ID when collecting card \nThe card limit is R1000',
-                      style: TextStyle(
-                        fontSize: 18,
-                      ),
+                  Text(
+                    'Name:     Lira',
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    'Surname:     Phillips',
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    'Email:     liphi@gmaul.com',
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    'Phone:     0734######',
+                    style: TextStyle(
+                      fontSize: 18,
                     ),
                   ),
                   SizedBox(height: 50),
@@ -97,7 +95,7 @@ class CardPage extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                MyApp()), // Replace LoginPage() with your actual login page widget
+                                FaceScan()), // Replace LoginPage() with your actual login page widget
                       );
                     },
                     style: ButtonStyle(
@@ -111,14 +109,18 @@ class CardPage extends StatelessWidget {
                       minimumSize: MaterialStateProperty.all(Size(300, 70)),
                     ),
                     child: Text(
-                      'Done',
+                      'Confirm',
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
                   SizedBox(height: 50),
                   Text(
-                    'Some additional information or disclaimer text at the bottom',
-                    style: TextStyle(fontSize: 14, color: Colors.grey),
+                    'If the details are correct, click the confirm button above.',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.grey,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
                 ],
               ),

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'signup.dart'; // Import the signup.dart file
-
-void main() {
-  runApp(const MyApp());
-}
+import 'signup.dart';
+import 'insertCard.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -28,12 +25,11 @@ class LoginPage extends StatelessWidget {
             left: 0,
             top: 0,
             child: Container(
-              width: 400, // Set the desired width
-              height: 400, // Set the desired height
+              width: 400,
+              height: 400,
               child: Image.asset(
-                'assets/shape.png', // Path to your image asset
-                fit:
-                    BoxFit.contain, // Fit the entire image within the container
+                'assets/shape.png',
+                fit: BoxFit.contain,
               ),
             ),
           ),
@@ -41,14 +37,13 @@ class LoginPage extends StatelessWidget {
             right: 0,
             top: 0,
             child: Transform.rotate(
-              angle: 90 * 3.14 / 180, // Rotate -90 degrees in radians
+              angle: 90 * 3.14 / 180,
               child: Container(
-                width: 400, // Set the desired width
-                height: 400, // Set the desired height
+                width: 400,
+                height: 400,
                 child: Image.asset(
-                  'assets/shape.png', // Path to your image asset
-                  fit: BoxFit
-                      .contain, // Fit the entire image within the container
+                  'assets/shape.png',
+                  fit: BoxFit.contain,
                 ),
               ),
             ),
@@ -67,7 +62,7 @@ class LoginPage extends StatelessWidget {
                   // Image under the text
                   Image.asset(
                     'assets/logo.jpeg',
-                    width: 500, // Adjust as needed
+                    width: 500,
                     height: 500,
                   ),
                   SizedBox(height: 20), // Spacer
@@ -82,8 +77,7 @@ class LoginPage extends StatelessWidget {
                     child: TextFormField(
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        contentPadding: EdgeInsets.symmetric(
-                            vertical: 5), // Adjust vertical padding
+                        contentPadding: EdgeInsets.symmetric(vertical: 5),
                         labelText: '   Enter your email',
                       ),
                     ),
@@ -108,8 +102,7 @@ class LoginPage extends StatelessWidget {
                   SizedBox(height: 10),
                   // Forgot password text
                   Padding(
-                    padding: const EdgeInsets.only(
-                        left: 570), // Adjust padding as needed
+                    padding: const EdgeInsets.only(left: 570),
                     child: TextButton(
                       onPressed: () {
                         // Add forgot password functionality here
@@ -121,12 +114,10 @@ class LoginPage extends StatelessWidget {
                   // Sign in button
                   ElevatedButton(
                     onPressed: () {
-                      // Navigate to the login page
+                      // Navigate to the card insert page
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                LoginPage()), // Replace LoginPage() with your actual login page widget
+                        MaterialPageRoute(builder: (context) => CardInsert()),
                       );
                     },
                     style: ButtonStyle(
@@ -140,9 +131,8 @@ class LoginPage extends StatelessWidget {
                           MaterialStateProperty.all(Color(0xFF280072)),
                     ),
                     child: Text(
-                      'Sign In',
-                      style: TextStyle(
-                          color: Colors.white), // Set the text color to white
+                      'Sign in',
+                      style: TextStyle(color: Colors.white),
                     ),
                   ),
                   SizedBox(height: 20),
@@ -177,4 +167,8 @@ class LoginPage extends StatelessWidget {
       ),
     );
   }
+}
+
+void main() {
+  runApp(const MyApp());
 }
