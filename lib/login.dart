@@ -69,16 +69,12 @@ class LoginPage extends StatelessWidget {
                   // Email input field
                   Container(
                     width: 600,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: Colors.black),
-                    ),
                     child: TextFormField(
                       decoration: InputDecoration(
-                        border: InputBorder.none,
-                        contentPadding: EdgeInsets.symmetric(vertical: 5),
-                        labelText: '   Enter your email',
+                        labelText: 'Enter your email',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                       ),
                     ),
                   ),
@@ -86,16 +82,12 @@ class LoginPage extends StatelessWidget {
                   // Password input field
                   Container(
                     width: 600,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: Colors.black),
-                    ),
                     child: TextFormField(
                       decoration: InputDecoration(
-                        border: InputBorder.none,
-                        contentPadding: EdgeInsets.symmetric(vertical: 5),
-                        labelText: '   Enter your password',
+                        labelText: 'Enter your password',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                       ),
                     ),
                   ),

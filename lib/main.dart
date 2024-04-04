@@ -105,7 +105,7 @@ class MyHomePage extends StatelessWidget {
                         MaterialStateProperty.all(Color(0xFF280072)),
                   ),
                   child: Text(
-                    'Get Startedd',
+                    'Get Started',
                     style: TextStyle(
                         color: Colors.white), // Set the text color to white
                   ),

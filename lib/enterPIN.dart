@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'login.dart';
 import 'insertCard.dart';
 import 'confirmInfo.dart';
 

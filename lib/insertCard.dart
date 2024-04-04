@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'login.dart';
 import 'enterPIN.dart';
 
 class CardInsert extends StatelessWidget {
