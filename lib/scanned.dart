@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'faceScan.dart';
+import 'dashboard.dart';
 
 class Scanned extends StatelessWidget {
   const Scanned({Key? key}) : super(key: key);
@@ -72,7 +72,7 @@ class Scanned extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                FaceScan()), // Replace LoginPage() with your actual login page widget
+                                DashboardPage()), // Replace LoginPage() with your actual login page widget
                       );
                     },
                     style: ButtonStyle(

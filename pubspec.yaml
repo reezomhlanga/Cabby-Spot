@@ -69,9 +69,11 @@ flutter:
    - assets/image003.png
    - assets/image004.png
    - assets/image005.png
-  #  - assets/image006.png
-  #  - assets/image007.png
-  #  - assets/image008.png
+   - assets/image006.png
+   - assets/image007.png
+   - assets/image008.png
+   - assets/image009.png
+   - assets/image010.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
