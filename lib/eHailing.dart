@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'eHailing.dart';
+import 'dashboard.dart';
 
-class DashboardPage extends StatefulWidget {
+class eHailingOption extends StatefulWidget {
   @override
-  _DashboardPageState createState() => _DashboardPageState();
+  _eHailingOptionState createState() => _eHailingOptionState();
 }
 
-class _DashboardPageState extends State<DashboardPage> {
+class _eHailingOptionState extends State<eHailingOption> {
   String _selectedOption = '';
 
   @override
@@ -52,7 +52,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       width: 150,
                       height: 150,
                       child: Image.asset(
-                        'assets/image006.png',
+                        'assets/image007.png',
                         fit: BoxFit.contain,
                       ),
                     ),
@@ -61,83 +61,48 @@ class _DashboardPageState extends State<DashboardPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Welcome, Lira Phillips!',
+                          'Uber',
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         SizedBox(height: 10),
-                        Row(
-                          children: [
-                            Text(
-                              'Balance: ',
-                              style: TextStyle(fontSize: 18),
-                            ),
-                            SizedBox(width: 10),
-                            Text(
-                              'R189.98',
-                              style: TextStyle(
-                                fontSize: 18,
-                                color: Color.fromARGB(255, 12, 101, 48),
-                              ),
-                            ),
-                          ],
-                        ),
                       ],
                     ),
                   ],
                 ),
                 SizedBox(height: 30),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20.0),
+                    child: Text(
+                      'Available Drivers',
+                      style: TextStyle(fontSize: 28),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 30),
                 Container(
                   width: 1200,
-                  height: 600,
+                  height: 500,
                   color: Color.fromARGB(255, 250, 246, 246),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        'Please Select Your eHailing Option',
-                        style: TextStyle(fontSize: 28),
-                      ),
                       SizedBox(height: 50),
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
                           children: [
-                            _buildImageWithText('assets/image007.png', 'Uber'),
+                            _buildImageWithText(
+                                'assets/image007.png', 'eHailingOption'),
                             _buildImageWithText('assets/image008.png', 'Bolt'),
                             _buildImageWithText('assets/image009.png', 'Zebra'),
                             _buildImageWithText('assets/image010.png', 'Ingwe'),
                             // Add more images and text here as needed
                           ],
-                        ),
-                      ),
-                      SizedBox(height: 50),
-                      ElevatedButton(
-                        onPressed: () {
-                          // Add functionality for the Continue button
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    eHailingOption()), // Replace LoginPage() with your actual login page widget
-                          );
-                        },
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Color(0xFF280072)),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                          ),
-                          minimumSize: MaterialStateProperty.all(Size(300, 70)),
-                        ),
-                        child: Text(
-                          'Continue',
-                          style: TextStyle(color: Colors.white),
                         ),
                       ),
                     ],
@@ -252,6 +217,6 @@ class _DashboardPageState extends State<DashboardPage> {
 
 void main() {
   runApp(MaterialApp(
-    home: DashboardPage(),
+    home: eHailingOption(),
   ));
 }
