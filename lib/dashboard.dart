@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'eHailing.dart';
+import 'ehailing.dart';
+import 'login.dart';
 
 class DashboardPage extends StatefulWidget {
   @override
@@ -32,11 +33,43 @@ class _DashboardPageState extends State<DashboardPage> {
             child: Transform.rotate(
               angle: 90 * 3.14 / 180,
               child: Container(
-                width: 400,
-                height: 400,
-                child: Image.asset(
-                  'assets/shape.png',
-                  fit: BoxFit.contain,
+                child: Stack(
+                  children: [
+                    Image.asset(
+                      width: 400, // Adjusted width
+                      height: 400,
+                      'assets/shape.png',
+                      fit: BoxFit.contain,
+                    ),
+                    Positioned(
+                      top: 20,
+                      right: 300,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    MyApp()), // Replace LoginPage() with your actual login page widget
+                          );
+                        },
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 16),
+                          child: RotatedBox(
+                            quarterTurns: 3,
+                            child: Text(
+                              "Logout",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dashboard.dart';
+import 'login.dart';
+import 'destination.dart';
 
 class eHailingOption extends StatefulWidget {
   @override
@@ -32,11 +34,43 @@ class _eHailingOptionState extends State<eHailingOption> {
             child: Transform.rotate(
               angle: 90 * 3.14 / 180,
               child: Container(
-                width: 400,
-                height: 400,
-                child: Image.asset(
-                  'assets/shape.png',
-                  fit: BoxFit.contain,
+                child: Stack(
+                  children: [
+                    Image.asset(
+                      width: 400, // Adjusted width
+                      height: 400,
+                      'assets/shape.png',
+                      fit: BoxFit.contain,
+                    ),
+                    Positioned(
+                      top: 20,
+                      right: 300,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    MyApp()), // Replace LoginPage() with your actual login page widget
+                          );
+                        },
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 16),
+                          child: RotatedBox(
+                            quarterTurns: 3,
+                            child: Text(
+                              "Logout",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -46,14 +80,17 @@ class _eHailingOptionState extends State<eHailingOption> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Container(
-                      width: 150,
-                      height: 150,
-                      child: Image.asset(
-                        'assets/image007.png',
-                        fit: BoxFit.contain,
+                    SizedBox(width: 450),
+                    ClipRRect(
+                      child: Container(
+                        width: 150,
+                        height: 150,
+                        child: Image.asset(
+                          'assets/image007.png',
+                          fit: BoxFit.contain,
+                        ),
                       ),
                     ),
                     SizedBox(width: 20),
@@ -72,11 +109,11 @@ class _eHailingOptionState extends State<eHailingOption> {
                     ),
                   ],
                 ),
-                SizedBox(height: 30),
+                SizedBox(height: 50),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 20.0),
+                    padding: const EdgeInsets.only(left: 355.0),
                     child: Text(
                       'Available Drivers',
                       style: TextStyle(fontSize: 28),
@@ -84,28 +121,194 @@ class _eHailingOptionState extends State<eHailingOption> {
                   ),
                 ),
                 SizedBox(height: 30),
-                Container(
-                  width: 1200,
-                  height: 500,
-                  color: Color.fromARGB(255, 250, 246, 246),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(height: 50),
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Container(
+                    width: 1200,
+                    height: 100,
+                    color: Color.fromARGB(255, 206, 203, 203),
+                    child: Row(
+                      children: [
+                        SizedBox(width: 0),
+                        Container(
+                          width: 100,
+                          height: 90,
+                          child: Image.asset(
+                            'assets/image011.png',
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                        SizedBox(width: 20),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            _buildImageWithText(
-                                'assets/image007.png', 'eHailingOption'),
-                            _buildImageWithText('assets/image008.png', 'Bolt'),
-                            _buildImageWithText('assets/image009.png', 'Zebra'),
-                            _buildImageWithText('assets/image010.png', 'Ingwe'),
-                            // Add more images and text here as needed
+                            Text(
+                              'Rorbert Diph',
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 5),
+                            Text(
+                              'Tazz ( JNK 319 )',
+                              style: TextStyle(fontSize: 14),
+                            ),
                           ],
                         ),
+                        SizedBox(width: 800), // Adjusted spacing
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'R56.00',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                            SizedBox(height: 5), // Added vertical space
+                            Text(
+                              '20 min',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Container(
+                    width: 1200,
+                    height: 100,
+                    color: Color.fromARGB(255, 206, 203, 203),
+                    child: Row(
+                      children: [
+                        SizedBox(width: 0),
+                        Container(
+                          width: 100,
+                          height: 90,
+                          child: Image.asset(
+                            'assets/image011.png',
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                        SizedBox(width: 20),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Calvin Given',
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 5),
+                            Text(
+                              'SUZUK ( JNJ 319 )',
+                              style: TextStyle(fontSize: 14),
+                            ),
+                          ],
+                        ),
+                        SizedBox(width: 800), // Adjusted spacing
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'R45.00 ',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                            SizedBox(height: 5), // Added vertical space
+                            Text(
+                              '1hr 40 min',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Container(
+                    width: 1200,
+                    height: 100,
+                    color: Color.fromARGB(255, 206, 203, 203),
+                    child: Row(
+                      children: [
+                        SizedBox(width: 0),
+                        Container(
+                          width: 100,
+                          height: 90,
+                          child: Image.asset(
+                            'assets/image011.png',
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                        SizedBox(width: 20),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Bongani Motha',
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 5),
+                            Text(
+                              'sUZUK ( JNJ 319 )',
+                              style: TextStyle(fontSize: 14),
+                            ),
+                          ],
+                        ),
+                        SizedBox(width: 800), // Adjusted spacing
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'R78.00',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                            SizedBox(height: 5), // Added vertical space
+                            Text(
+                              '45 min',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(height: 40),
+                ElevatedButton(
+                  onPressed: () {
+                    // Add functionality for the Continue button
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              DestinationPage()), // Replace LoginPage() with your actual login page widget
+                    );
+                  },
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all(Color(0xFF280072)),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
                       ),
-                    ],
+                    ),
+                    minimumSize: MaterialStateProperty.all(Size(300, 70)),
+                  ),
+                  child: Text(
+                    'Continue',
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               ],
