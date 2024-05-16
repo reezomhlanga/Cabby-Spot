@@ -1,3 +1,7 @@
+import 'package:cabby_spot/AccountRide.dart';
+import 'package:cabby_spot/confirm.dart';
+import 'package:cabby_spot/confirmInfo.dart';
+import 'package:cabby_spot/refill.dart';
 import 'package:flutter/material.dart';
 import 'dashboard.dart';
 import 'login.dart';
@@ -86,12 +90,73 @@ class _DestinationPageState extends State<DestinationPage> {
                     color: Colors.black,
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 50),
                 Image.asset(
                   width: 600, // Adjusted width
-                  height: 600,
+                  height: 300,
                   'assets/image012.png',
                   fit: BoxFit.contain,
+                ),
+
+                SizedBox(height: 20), // Spacer
+                // Email input field
+                Container(
+                  width: 500,
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      labelText: 'From:',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                  ),
+                ),
+
+                SizedBox(height: 10),
+                Text(
+                  '',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+
+                SizedBox(height: 20), // Spacer
+                // Email input field
+                Container(
+                  width: 500,
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      labelText: 'To:',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                  ),
+                ),
+
+                SizedBox(height: 50),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ConfirmPage()),
+                    );
+                  },
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all(Color(0xFF280072)),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
+                    minimumSize: MaterialStateProperty.all(Size(300, 70)),
+                  ),
+                  child: Text(
+                    'Continue',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ],
             ),
@@ -147,7 +212,12 @@ class _DestinationPageState extends State<DestinationPage> {
                 children: [
                   IconButton(
                     onPressed: () {
-                      // Add functionality for account icon
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Refill(),
+                        ),
+                      ); //// Add functionality for account icon
                     },
                     icon: Icon(Icons.account_circle, size: 40),
                   ),

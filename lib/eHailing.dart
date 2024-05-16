@@ -1,3 +1,5 @@
+import 'package:cabby_spot/AccountRide.dart';
+import 'package:cabby_spot/refill.dart';
 import 'package:flutter/material.dart';
 import 'dashboard.dart';
 import 'login.dart';
@@ -365,7 +367,12 @@ class _eHailingOptionState extends State<eHailingOption> {
                 children: [
                   IconButton(
                     onPressed: () {
-                      // Add functionality for account icon
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Refill(),
+                        ),
+                      ); //// Add functionality for account icon
                     },
                     icon: Icon(Icons.account_circle, size: 40),
                   ),
